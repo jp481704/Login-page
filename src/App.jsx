@@ -1,20 +1,20 @@
-import React from 'react'
-import './App.css'
-import Login from './pages/login/Login'
-import { Route, Router, Routes } from 'react-router'
-import ThankYou from './pages/ThankYou/ThankYou'
+import React from "react";
+import "./App.css";
+import Login from "./pages/login/Login";
+import { BrowserRouter, Route, Router, Routes } from "react-router";
+import ThankYou from "./pages/ThankYou/ThankYou";
 
 function App() {
-
   return (
     <>
- <Router>
-      <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/thankyou" element={<ThankYou />} />
-      </Routes>
-    </Router>    </>
-  )
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/thankyou" element={<ThankYou />} />
+        </Routes>
+      </BrowserRouter>{" "}
+    </>
+  );
 }
 
-export default App
+export default App;
