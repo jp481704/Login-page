@@ -1,10 +1,12 @@
 import axios from "axios";
 import { useFormik } from "formik";
-import React, { useState } from "react";
+import React from "react";
+import { useNavigate } from "react-router";
 import * as Yup from "yup";
 
 const Login = () => {
   // const [formData, setFormData] = useState({ name: "", password: "" });
+  const navigate = useNavigate(); // Initialize navigate
 
   const formik = useFormik({
     initialValues: {
@@ -30,6 +32,9 @@ const Login = () => {
           }
         );
         console.log(response, "res");
+        if(response.status === 200){
+          navigate("/thankyou")
+        }
       } catch (error) {
         console.log(error);
       }
